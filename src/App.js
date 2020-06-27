@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react"
+import "./App.css"
+import Nav from "./Nav"
+import HermesWorker from "./HermesWorker"
+import Workers from "./Workers"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      url: "http://localhost:5000"
+    }
+    this.handleWorkerSelect = this.handleWorkerSelect.bind(this)
+  }
+  handleWorkerSelect(url) {
+    this.setState({ url })
+  }
+  render() {
+    return (
+      <div className="App">
+        <Nav/>
+        <Workers handleClick={this.handleWorkerSelect}/>
+        <HermesWorker url={this.state.url}/>
+        <p className="footer">Homebase: Prototype</p>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
