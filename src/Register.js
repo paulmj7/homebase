@@ -1,9 +1,11 @@
 import React, { Component } from "react"
 
-class Login extends Component {
+class Register extends Component {
   constructor() {
     super()
     this.state = {
+      firstName: "",
+      lastName: "",
       emailAddress: "",
       password: "",
       clicked: false
@@ -17,8 +19,8 @@ class Login extends Component {
     this.setState({ [event.target.name]: event.target.value })
   }
   handleSubmit(event) {
-    this.props.onSubmit(this.state.emailAddress, this.state.password, event)
-    this.setState({ emailAddress: "", password: "", clicked: false })
+    this.props.onSubmit(this.state.firstName, this.state.lastName, this.state.emailAddress, this.state.password, event)
+    this.setState({ firstName: "", lastName: "", emailAddress: "", password: "", clicked: false })
   }
   handleToggle() {
     if (this.state.clicked) {
@@ -31,16 +33,18 @@ class Login extends Component {
     return (
       <div>
         {this.state.clicked
-          ? <form onSubmit={this.handleSubmit}>
+          ? <form className="register-form" onSubmit={this.handleSubmit}>
+              <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange}/>
+              <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange}/>
               <input type="email" name="emailAddress" value={this.state.emailAddress} onChange={this.handleChange}/>
               <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
-              <input type="submit" value="Login"/>
+              <input type="submit" value="Sign Up"/>
             </form>
-          : <button onClick={this.handleToggle}>Login</button>
+          : <button onClick={this.handleToggle}>Register</button>
         }
       </div>
     )
   }
 }
 
-export default Login
+export default Register

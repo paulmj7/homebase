@@ -56,7 +56,7 @@ class HermesWorker extends Component {
     if (path === "@back") {
       this.componentDidMount()
     } else {
-      fetch(this.props.url + "/move", {
+      fetch(this.props.url + "/change_dir", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -92,18 +92,24 @@ class HermesWorker extends Component {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ "path": this.state.currPath + "/" + folderName })
-    }).then(() => function() {
-      alert("Success")
+      body: JSON.stringify({ path: this.state.currPath + "/" + folderName })
     })
   }
-  handleDrag(event, path) {
+  handleDrag(event, path, name) {
     event.dataTransfer.setData("text", path)
+    event.dataTransfer.setData("name", name)
   }
   handleDrop(event, path) {
     event.preventDefault()
     const data = event.dataTransfer.getData("text")
-    console.log(data)
+    const name = event.dataTransfer.getData("name")
+    fetch(this.props.url + "/move", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ "location": data, "destination": path + "/" + name })
+    })
   }
   handleDragOver(event) {
     event.preventDefault()

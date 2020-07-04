@@ -6,9 +6,13 @@ class Nav extends Component {
   constructor() {
     super()
     this.handleReload = this.handleReload.bind(this)
+    this.handleAuth = this.handleAuth.bind(this)
   }
   handleReload() {
     window.location.reload()
+  }
+  handleAuth(email, key) {
+    this.props.onAuth(email, key)
   }
   render() {
     return (
@@ -17,7 +21,7 @@ class Nav extends Component {
           <img src={CloudIcon}/>
           <h3 className="nav-button-title">Homebase</h3>
         </div>
-        <AuthWorker/>
+        <AuthWorker onAuth={this.handleAuth}/>
       </div>
     )
   }

@@ -24,6 +24,7 @@ class CreateFolderForm extends Component {
     this.setState({ [event.target.name]: event.target.value })
   }
   handleSubmit(event) {
+    event.preventDefault()
     this.props.handleSubmit(event, this.state.folderName)
     this.setState({ folderName: "", clicked: false })
   }

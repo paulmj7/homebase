@@ -8,18 +8,24 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      url: "http://localhost:5000"
+      emailAddress: "",
+      secretKey: "",
+      url: ""
     }
     this.handleWorkerSelect = this.handleWorkerSelect.bind(this)
+    this.handleAuth = this.handleAuth.bind(this)
   }
   handleWorkerSelect(url) {
     this.setState({ url })
   }
+  handleAuth(emailAddress, secretKey) {
+    this.setState({ emailAddress, secretKey })
+  }
   render() {
     return (
       <div className="App">
-        <Nav/>
-        <Workers handleClick={this.handleWorkerSelect}/>
+        <Nav onAuth={this.handleAuth}/>
+        <Workers emailAddress={this.state.emailAddress} secretKey={this.state.secretKey} onClick={this.handleWorkerSelect}/>
         <HermesWorker url={this.state.url}/>
         <p className="footer">Homebase: Prototype</p>
       </div>
