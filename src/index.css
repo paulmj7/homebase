@@ -1,3 +1,11 @@
+/*
+ * Dark Blue: 5AA9E6
+ * Light Blue: 7FC8F8
+ * White: F9F9F9
+ * Yellow: FFE45E
+ * Pink: FF6392
+ */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -49,21 +57,28 @@ code {
 .workers {
   grid-area: workers;
   overflow: scroll;
+  background-color: #FFE45E;
 }
 
 .hermesworker {
   grid-area: hermesworker;
   overflow: scroll;
+  background-color: #F9F9F9;
 }
 
 .nav {
   grid-area: nav;
   overflow: hidden;
+  background-color: #7FC8F8;
   border-bottom: solid 1px;
 }
 
 .footer {
   grid-area: footer;
+  background-color: #FF6392;
+  height: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
 
 ul.worker-list {
@@ -84,7 +99,7 @@ ul.worker-list {
 }
 
 .worker-list-item:hover {
-  background-color: blue;
+  background-color: #5AA9E6;
   color: white;
   cursor: pointer;
 }
@@ -118,7 +133,7 @@ ul.worker-list {
 }
 
 .path-button:hover {
-  background-color: blue;
+  background-color: #5AA9E6;
   color: white;
   cursor: pointer;
 }
@@ -150,7 +165,7 @@ ul.worker-list {
 }
 
 .nav-button:hover {
-  background-color: blue;
+  background-color: #5AA9E6;
   cursor: pointer;
   color: white;
 }
