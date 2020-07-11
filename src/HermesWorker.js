@@ -96,19 +96,20 @@ class HermesWorker extends Component {
     })
   }
   handleDrag(event, path, name) {
-    event.dataTransfer.setData("text", path)
-    event.dataTransfer.setData("name", name)
+    event.dataTransfer.setData("text/plain", JSON.stringify({ "path": path, "name": name }))
   }
   handleDrop(event, path) {
     event.preventDefault()
-    const data = event.dataTransfer.getData("text")
-    const name = event.dataTransfer.getData("name")
+    const data = event.dataTransfer.getData("text/plain")
+    const dataJson = JSON.parse(data)
+    const sourcePath = dataJson["path"]
+    const name = dataJson["name"]
     fetch(this.props.url + "/move", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ "location": data, "destination": path + "/" + name })
+      body: JSON.stringify({ "location": sourcePath, "destination": path + "/" + name })
     })
   }
   handleDragOver(event) {

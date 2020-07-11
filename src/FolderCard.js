@@ -17,7 +17,7 @@ class FolderCard extends Component {
     }
     render() {
       return (
-        <div draggable="true" onDragStart={(event) => this.props.onDrag(event, this.props.path)} onDragOver={(event) => this.props.onDragOver(event)} onDrop={(event) => this.props.onDrop(event, this.props.path)} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={(event) => this.props.handleClick(this.props.root, this.props.path, this.props.name, event)} className="flex-item">
+        <div draggable="true" onDragStart={(event) => this.props.onDrag(event, this.props.path, this.props.name)} onDragOver={(event) => this.props.onDragOver(event)} onDrop={(event) => this.props.onDrop(event, this.props.path)} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={(event) => this.props.handleClick(this.props.root, this.props.path, this.props.name, event)} className="flex-item">
           <p className="item-title">{this.props.name}</p>
           <div>
             {!this.state.open
