@@ -47,7 +47,6 @@ app.post("/login", function(req, res) {
           console.log(err)
           res.json({ "message": "failure" })
         } else {
-          console.log(row.secret_key)
           res.json({ "message": "success", "f_name": row.f_name, "l_name": row.l_name, "secret_key": row.secret_key })
         }
       })

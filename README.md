@@ -26,10 +26,12 @@ yarn start ## or node server.js
 
 The web app can be accessed at http://localhost:3000
 
+Coming soon
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://github.com/paulmj7/homebase/LICENSE)
+[MIT](https://github.com/paulmj7/homebase/blob/master/LICENSE)
