@@ -1,5 +1,7 @@
 # Homebase
 
+![Node.js CI](https://github.com/paulmj7/homebase/workflows/Node.js%20CI/badge.svg)
+
 Homebase is a distributed file storage system web app that interacts with [Hermes](https://github.com/paulmj7/hermes) workers.
 
 ## Installation

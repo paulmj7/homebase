@@ -11,7 +11,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -24,6 +23,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: yarn ci
-    - run: yarn run build --if-present
-    - run: yarn test
+    - name: Install yarn
+      run: |
+        yarn
+        yarn build
+        yarn test
+      env:
+        CI: true
