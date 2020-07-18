@@ -32,8 +32,8 @@ class Login extends Component {
       <div>
         {this.state.clicked
           ? <form className="login-form" onSubmit={this.handleSubmit}>
-              <input type="email" name="emailAddress" value={this.state.emailAddress} onChange={this.handleChange}/>
-              <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
+              <input type="email" placeholder="Enter email" name="emailAddress" value={this.state.emailAddress} onChange={this.handleChange}/>
+              <input type="password" placeholder="Enter password"  name="password" value={this.state.password} onChange={this.handleChange}/>
               <input type="submit" value="Login"/>
             </form>
           : <button onClick={this.handleToggle}>Login</button>

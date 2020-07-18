@@ -34,10 +34,10 @@ class Register extends Component {
       <div>
         {this.state.clicked
           ? <form className="register-form" onSubmit={this.handleSubmit}>
-              <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange}/>
-              <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange}/>
-              <input type="email" name="emailAddress" value={this.state.emailAddress} onChange={this.handleChange}/>
-              <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
+              <input type="text" placeholder="Enter first name" name="firstName" value={this.state.firstName} onChange={this.handleChange}/>
+              <input type="text" placeholder="Enter last name" name="lastName" value={this.state.lastName} onChange={this.handleChange}/>
+              <input type="email" placeholder="Enter email" name="emailAddress" value={this.state.emailAddress} onChange={this.handleChange}/>
+              <input type="password" placeholder="Enter password" name="password" value={this.state.password} onChange={this.handleChange}/>
               <input type="submit" value="Sign Up"/>
             </form>
           : <button onClick={this.handleToggle}>Register</button>
