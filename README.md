@@ -20,6 +20,12 @@ node tableSetup.js
 
 ## Usage
 
+Build with yarn
+
+```bash
+yarn build
+```
+
 Run with yarn
 
 ```bash
