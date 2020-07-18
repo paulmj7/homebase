@@ -31,7 +31,7 @@ class Login extends Component {
     return (
       <div>
         {this.state.clicked
-          ? <form onSubmit={this.handleSubmit}>
+          ? <form className="login-form" onSubmit={this.handleSubmit}>
               <input type="email" name="emailAddress" value={this.state.emailAddress} onChange={this.handleChange}/>
               <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
               <input type="submit" value="Login"/>

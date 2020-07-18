@@ -34,7 +34,9 @@ yarn start ## or node server.js
 
 The web app can be accessed at http://localhost:3000
 
-Coming soon
+## Connecting to a Hermes Worker
+
+Run an instance of a Hermes worker on a different port. Then all you need to do is log in to the front-end and click "Add Worker". Homebase will remember the URL of the worker for you!
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

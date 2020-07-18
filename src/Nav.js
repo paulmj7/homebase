@@ -19,7 +19,6 @@ class Nav extends Component {
       <div className="nav">
         <div className="nav-button" onClick={this.handleReload}>
           <img src={CloudIcon}/>
-          <h3 className="nav-button-title">Homebase</h3>
         </div>
         <AuthWorker onAuth={this.handleAuth}/>
       </div>
