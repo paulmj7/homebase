@@ -34,6 +34,11 @@ yarn start ## or node server.js
 
 The web app can be accessed at http://localhost:3000
 
+The current features built include:
+- File download and upload
+- Drag and drop folders and files to move them between directories
+- Create new folders
+
 ## Connecting to a Hermes Worker
 
 Run an instance of a Hermes worker on a different port. Then all you need to do is log in to the front-end and click "Add Worker". Homebase will remember the URL of the worker for you!
